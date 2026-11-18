@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import UserCard from "./UserCard";
-import "./Users.css";
+import Card from "./Card";
+import "./CardData.css";
 
 // The "seed" makes randomuser.me return the SAME 20 users every time,
 // so a user you see in the list can be found again with the search.
 const API_URL = "https://randomuser.me/api/?results=20&seed=example";
 
-const Users = () => {
+const CardData = () => {
     // useState has initial state of empty array
     const [users, setUsers] = useState([]);
 
@@ -92,7 +92,7 @@ const Users = () => {
                     <h2>Search Result</h2>
                     <div className="user-list">
                         {foundUsers.map((user) => (
-                            <UserCard key={user.login.uuid} user={user} />
+                            <Card key={user.login.uuid} user={user} />
                         ))}
                     </div>
                 </div>
@@ -104,7 +104,7 @@ const Users = () => {
                     <h2>All Users ({users.length})</h2>
                     <div className="user-list">
                         {users.map((user) => (
-                            <UserCard key={user.login.uuid} user={user} />
+                            <Card key={user.login.uuid} user={user} />
                         ))}
                     </div>
                 </div>
@@ -113,4 +113,4 @@ const Users = () => {
     );
 };
 
-export default Users;
+export default CardData;

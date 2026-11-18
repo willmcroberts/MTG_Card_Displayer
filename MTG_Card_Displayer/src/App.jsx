@@ -1,10 +1,10 @@
 import React from "react";
-import Users from "./components/Users";
+import CardData from "./components/CardData";
 
 const App = () => {
     return (
         <div>
-            <Users />
+            <CardData />
         </div>
     );
 };
