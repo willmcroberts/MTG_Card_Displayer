@@ -1,19 +1,25 @@
 import React from "react";
 
-// Displays one user. The user object is passed in as a prop.
-const UserCard = ({ user }) => {
+const Card = ({ card }) => {
+    const imageUrl =
+        card.image_uris?.normal ||
+        card.card_faces?.[0]?.image_uris?.normal ||
+        null;
+
+    const manaCost = card.mana_cost || "";
+
     return (
-        <div className="user-card">
-            <img src={user.picture.large} alt={`${user.name.first} ${user.name.last}`} />
-            <h3>
-                {user.name.first} {user.name.last}
-            </h3>
-            <p>{user.email}</p>
-            <p>
-                {user.location.city}, {user.location.country}
-            </p>
+        <div className="magic-card">
+            {imageUrl ? (
+                <img src={imageUrl} alt={card.name} loading="lazy" />
+            ) : (
+                <div className="card-placeholder">{card.name}</div>
+            )}
+            <h3>{card.name}</h3>
+            {manaCost && <p className="mana-cost">{manaCost}</p>}
+            <p>{card.type_line}</p>
         </div>
     );
 };
 
-export default UserCard;
+export default Card;
