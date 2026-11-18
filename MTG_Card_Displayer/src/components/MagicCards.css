@@ -1,0 +1,84 @@
+.magic-cards {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.magic-cards button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.magic-cards button:hover {
+    background-color: #1d4ed8;
+}
+
+.search {
+    margin: 16px 0;
+    display: flex;
+    gap: 8px;
+}
+
+.search input {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 250px;
+}
+
+.message {
+    color: #b91c1c;
+    font-weight: bold;
+}
+
+/* Grid of Magic cards */
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.magic-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    background-color: #f9fafb;
+}
+
+.magic-card img {
+    display: block;
+    width: 100%;
+    max-width: 246px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+.card-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 63 / 88;
+    border-radius: 8px;
+    background-color: #ddd;
+    font-weight: bold;
+}
+
+.magic-card h3 {
+    margin: 8px 0 4px;
+}
+
+.magic-card p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+    color: #444;
+    word-break: break-word;
+}
