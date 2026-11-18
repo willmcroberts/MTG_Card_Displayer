@@ -1,10 +1,10 @@
 import React from "react";
-import CardData from "./components/CardData";
+import MagicCards from "./components/MagicCards";
 
 const App = () => {
     return (
         <div>
-            <CardData />
+            <MagicCards />
         </div>
     );
 };
