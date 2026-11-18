@@ -2,20 +2,15 @@ import React, { useState } from "react";
 import Card from "./Card";
 import "./CardData.css";
 
-// The "seed" makes randomuser.me return the SAME 20 users every time,
-// so a user you see in the list can be found again with the search.
 const API_URL = "https://randomuser.me/api/?results=20&seed=example";
 
 const CardData = () => {
-    // useState has initial state of empty array
     const [users, setUsers] = useState([]);
 
-    // State for the search box and the search result
     const [searchTerm, setSearchTerm] = useState("");
     const [foundUsers, setFoundUsers] = useState([]);
     const [message, setMessage] = useState("");
 
-    // Fetch 20 users when the "Get Users" button is clicked
     const fetchUsers = async () => {
         try {
             const response = await fetch(API_URL);
@@ -23,8 +18,6 @@ const CardData = () => {
 
             console.log(data);
 
-            // randomuser.me returns an OBJECT: { results: [...], info: {...} }
-            // The array of users is in data.results, not data itself.
             if (data.results && data.results.length > 0) {
                 setUsers(data.results);
             }
@@ -33,7 +26,6 @@ const CardData = () => {
         }
     };
 
-    // Fetch from the API again and look for a user by name
     const searchUser = async () => {
         const term = searchTerm.trim().toLowerCase();
 
@@ -47,7 +39,6 @@ const CardData = () => {
             const response = await fetch(API_URL);
             const data = await response.json();
 
-            // Keep only users whose first, last or full name contains the search term
             const matches = data.results.filter((user) => {
                 const fullName = `${user.name.first} ${user.name.last}`.toLowerCase();
                 return fullName.includes(term);
@@ -70,7 +61,7 @@ const CardData = () => {
         <div className="users">
             <h1>Users</h1>
 
-            {/* Button to fetch the 20 users */}
+            {/* Button to fetch the 20 cards */}
             <button onClick={fetchUsers}>Get Users</button>
 
             {/* Search box and second button */}
@@ -98,7 +89,7 @@ const CardData = () => {
                 </div>
             )}
 
-            {/* All 20 users */}
+            {/* All 20 cards */}
             {users.length > 0 && (
                 <div>
                     <h2>All Users ({users.length})</h2>
