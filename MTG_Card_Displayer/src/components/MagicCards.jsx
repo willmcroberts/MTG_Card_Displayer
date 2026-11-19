@@ -10,12 +10,12 @@ const MagicCards = () => {
     const [cardSearchTerm, setCardSearchTerm] = useState("");
     const [statusMessage, setStatusMessage] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-    const [resultsHeading, setResultsHeading] = useState("New Cards");
+    const [resultsHeading, setResultsHeading] = useState("Release Radar");
 
     const loadLatestCards = async () => {
         setIsLoading(true);
         setStatusMessage("");
-        setResultsHeading("New Cards");
+        setResultsHeading("Release Radar");
 
         try {
             const apiResponse = await fetch(
@@ -84,7 +84,7 @@ const MagicCards = () => {
 
     return (
         <div className="magic-cards">
-            <h1>Magic: The Gathering Cards</h1>
+            <h1>The Card Case</h1>
 
             <form className="search" onSubmit={handleCardSearch}>
                 <input
