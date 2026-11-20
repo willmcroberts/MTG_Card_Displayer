@@ -1,6 +1,6 @@
 :root {
     --background-color: #17191F;
-    --secondary-color: #252A33;
+    --secondary-background-color: #252A33;
     --accent-color: #C9A45C;
     --secondary-accent-color: #8B3238;
     --text-color: #E8E5DC;
@@ -23,6 +23,16 @@ body {
 
 .magic-card {
     text-align: center;
+    background-color: var(--secondary-background-color);
+    color: var(--text-color);
+}
+
+.magic-card .type-line {
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
 }
 
 .magic-card img {

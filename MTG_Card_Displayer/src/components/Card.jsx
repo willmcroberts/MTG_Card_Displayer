@@ -9,15 +9,14 @@ const Card = ({ card }) => {
     const manaCost = card.mana_cost || "";
 
     return (
-        <div className="magic-card h-100 p-2 border rounded-3 bg-light">
+        <div className="magic-card h-100 p-2 border rounded-4 d-flex flex-column align-items-center text-center">
             {imageUrl ? (
                 <img src={imageUrl} alt={card.name} loading="lazy" />
             ) : (
                 <div className="card-placeholder">{card.name}</div>
             )}
             <h3>{card.name}</h3>
-            {manaCost && <p className="mana-cost">{manaCost}</p>}
-            <p>{card.type_line}</p>
+            <p className="type-line">{card.type_line}</p>
         </div>
     );
 };
