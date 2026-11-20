@@ -24,6 +24,7 @@ body {
 
 .btn:hover {
     background-color: var(--secondary-accent-color);
+    color: var(--background-color);
 }
 
 .magic-cards {
