@@ -25,6 +25,9 @@ body {
     text-align: center;
     background-color: var(--secondary-background-color);
     color: var(--text-color);
+    border-color: var(--accent-color);
+    border-width: 2px;
+    border-style: solid;
 }
 
 .magic-card .type-line {
