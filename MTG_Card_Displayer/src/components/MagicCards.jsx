@@ -4,15 +4,6 @@ import "./MagicCards.css";
 
 const SCRYFALL_API_URL = "https://api.scryfall.com/cards/search";
 const CARDS_PER_PAGE = 20;
-const input = document.getElementById("search-input");
-const button = document.getElementById("search-button");
-
-input.addEventListener("keypress", (event) => {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        button.click();
-    }
-});
 
 const MagicCards = () => {
     const [displayedCards, setDisplayedCards] = useState([]);
@@ -92,29 +83,38 @@ const MagicCards = () => {
     };
 
     return (
-        <div className="magic-cards">
+        <div className="container py-4 magic-cards">
             <h1>The Card Case</h1>
 
-            <form className="search" onSubmit={handleCardSearch}>
-                <input
-                    id="search-input"
-                    type="text"
-                    placeholder="Search Cards"
-                    value={cardSearchTerm}
-                    onChange={(changeEvent) => setCardSearchTerm(changeEvent.target.value)}
-                />
-                <button id="search-button" type="submit">Search</button>
+            <form className="row g-2 mb-4" onSubmit={handleCardSearch}>
+                <div className="col-12 col-sm-8 col-md-6">
+                    <input
+                        id="search-input"
+                        className="form-control"
+                        type="text"
+                        placeholder="Search Cards"
+                        value={cardSearchTerm}
+                        onChange={(changeEvent) => setCardSearchTerm(changeEvent.target.value)}
+                    />
+                </div>
+                <div className="col-12 col-sm-4 col-md-auto">
+                    <button className="btn btn-primary w-100" id="search-button" type="submit">
+                        Search
+                    </button>
+                </div>
             </form>
 
-            {isLoading && <p>Loading cards...</p>}
-            {statusMessage && <p className="message">{statusMessage}</p>}
+            {isLoading && <p className="mb-3">Loading cards...</p>}
+            {statusMessage && <p className="message mb-3">{statusMessage}</p>}
 
             {displayedCards.length > 0 && (
                 <div>
-                    <h2>{resultsHeading}</h2>
-                    <div className="card-list">
+                    <h2 className="mb-3">{resultsHeading}</h2>
+                    <div className="row row-cols-2 row-cols-sm-3 row-cols-lg-4 g-3">
                         {displayedCards.map((card) => (
-                            <Card key={card.id} card={card} />
+                            <div className="col" key={card.id}>
+                                <Card card={card} />
+                            </div>
                         ))}
                     </div>
                 </div>

@@ -9,7 +9,7 @@ const Card = ({ card }) => {
     const manaCost = card.mana_cost || "";
 
     return (
-        <div className="magic-card">
+        <div className="magic-card h-100 p-2 border rounded-3 bg-light">
             {imageUrl ? (
                 <img src={imageUrl} alt={card.name} loading="lazy" />
             ) : (

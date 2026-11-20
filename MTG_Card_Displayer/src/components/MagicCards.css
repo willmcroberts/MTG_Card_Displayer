@@ -1,36 +1,5 @@
 .magic-cards {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-.magic-cards button {
-    padding: 8px 16px;
-    font-size: 1rem;
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.magic-cards button:hover {
-    background-color: #1d4ed8;
-}
-
-.search {
-    margin: 16px 0;
-    display: flex;
-    gap: 8px;
-}
-
-.search input {
-    padding: 8px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    width: 250px;
 }
 
 .message {
@@ -38,19 +7,8 @@
     font-weight: bold;
 }
 
-/* Grid of Magic cards */
-.card-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
-}
-
 .magic-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 12px;
     text-align: center;
-    background-color: #f9fafb;
 }
 
 .magic-card img {
