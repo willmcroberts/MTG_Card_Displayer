@@ -85,7 +85,7 @@ const MagicCards = () => {
     return (
         <div className="container py-4 magic-cards">
             <h1>The Card Case</h1>
-            <img className="logo-image img-fluid mb-4" src="/logo.png" alt="The Card Case Logo" />
+            <img className="logo-image img-fluid mb-5" src="/logo.png" alt="The Card Case Logo" />
 
             <div className="row align-items-center g-3 mb-3">
                 <div className="col-12 col-md-6">
