@@ -4,6 +4,15 @@ import "./MagicCards.css";
 
 const SCRYFALL_API_URL = "https://api.scryfall.com/cards/search";
 const CARDS_PER_PAGE = 20;
+const input = document.getElementById("search-input");
+const button = document.getElementById("search-button");
+
+input.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        button.click();
+    }
+});
 
 const MagicCards = () => {
     const [displayedCards, setDisplayedCards] = useState([]);
@@ -88,12 +97,13 @@ const MagicCards = () => {
 
             <form className="search" onSubmit={handleCardSearch}>
                 <input
+                    id="search-input"
                     type="text"
                     placeholder="Search Cards"
                     value={cardSearchTerm}
                     onChange={(changeEvent) => setCardSearchTerm(changeEvent.target.value)}
                 />
-                <button type="submit">Search</button>
+                <button id="search-button" type="submit">Search</button>
             </form>
 
             {isLoading && <p>Loading cards...</p>}
