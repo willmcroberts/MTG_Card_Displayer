@@ -1,3 +1,11 @@
+:root {
+    --background-color: #17191F;
+    --secondary-color: #252A33;
+    --accent-color: #C9A45C;
+    --secondary-accent-color: #8B3238;
+    --text-color: #E8E5DC;
+}
+
 .magic-cards {
     font-family: Arial, Helvetica, sans-serif;
 }
