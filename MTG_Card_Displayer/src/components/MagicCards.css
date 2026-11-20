@@ -44,6 +44,11 @@ body {
     border-style: solid;
 }
 
+.magic-card:hover {
+    border-color: var(--secondary-accent-color);
+    transform: scale(1.01);
+}
+
 .magic-card .type-line {
     color: var(--accent-color);
     font-weight: bold;
