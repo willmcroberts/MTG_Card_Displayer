@@ -85,38 +85,43 @@ const MagicCards = () => {
     return (
         <div className="container py-4 magic-cards">
             <h1>The Card Case</h1>
+            <img className="logo-image img-fluid mb-4" src="/logo.png" alt="The Card Case Logo" />
 
-            <form className="row g-2 mb-4" onSubmit={handleCardSearch}>
-                <div className="col-12 col-sm-8 col-md-6">
-                    <input
-                        id="search-input"
-                        className="form-control"
-                        type="text"
-                        placeholder="Search Cards"
-                        value={cardSearchTerm}
-                        onChange={(changeEvent) => setCardSearchTerm(changeEvent.target.value)}
-                    />
+            <div className="row align-items-center g-3 mb-3">
+                <div className="col-12 col-md-6">
+                    <h2 className="mb-0">{resultsHeading}</h2>
                 </div>
-                <div className="col-12 col-sm-4 col-md-auto">
-                    <button className="btn btn-primary w-100" id="search-button" type="submit">
-                        Search
-                    </button>
+                <div className="col-12 col-md-6">
+                    <form className="row g-2" onSubmit={handleCardSearch}>
+                        <div className="col">
+                            <input
+                                id="search-input"
+                                className="form-control"
+                                type="text"
+                                placeholder="Search Cards"
+                                value={cardSearchTerm}
+                                onChange={(changeEvent) => setCardSearchTerm(changeEvent.target.value)}
+                            />
+                        </div>
+                        <div className="col-auto">
+                            <button className="btn btn-primary" id="search-button" type="submit">
+                                Search
+                            </button>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
 
             {isLoading && <p className="mb-3">Loading cards...</p>}
             {statusMessage && <p className="message mb-3">{statusMessage}</p>}
 
             {displayedCards.length > 0 && (
-                <div>
-                    <h2 className="mb-3">{resultsHeading}</h2>
-                    <div className="row row-cols-2 row-cols-sm-3 row-cols-lg-4 g-3">
-                        {displayedCards.map((card) => (
-                            <div className="col" key={card.id}>
-                                <Card card={card} />
-                            </div>
-                        ))}
-                    </div>
+                <div className="row row-cols-2 row-cols-sm-3 row-cols-lg-4 g-3">
+                    {displayedCards.map((card) => (
+                        <div className="col" key={card.id}>
+                            <Card card={card} />
+                        </div>
+                    ))}
                 </div>
             )}
         </div>
